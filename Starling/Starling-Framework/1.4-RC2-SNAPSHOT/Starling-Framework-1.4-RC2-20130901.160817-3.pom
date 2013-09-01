@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Feathers</groupId>
-	<artifactId>MetalWorksMobileTheme</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<groupId>Starling</groupId>
+	<artifactId>Starling-Framework</artifactId>
+	<version>1.4-RC2-SNAPSHOT</version>
 	<packaging>swc</packaging>
-	<name>MetalWorksMobileTheme</name>
+	<name>Starling-Framework</name>
 
 	<properties>
 		<!-- 	the application name which must match the main mxml file
 				and application descriptor file names -->
-		<application.name>MetalWorksMobileTheme</application.name>
+		<application.name>Starling-Framework</application.name>
 		<air.version>3.8</air.version>
 		<flex.version>4.10.0.20130801</flex.version>
 		<flexmojos.version>6.0.0</flexmojos.version>
@@ -19,20 +19,8 @@
 		<keystore.password>123</keystore.password>
 		<!-- github server corresponds to entry in ~/.m2/settings.xml -->
 		<github.global.server>github</github.global.server>
-		<starling.version>1.4-RC2-SNAPSHOT</starling.version>
-		<feathers.version>1.2-SNAPSHOT</feathers.version>
 	</properties>
-	
-	<repositories>
-	    <repository>
-	        <id>maven_repo</id>
-	        <url>https://raw.github.com/hanibalsk/maven_repo/master/</url>
-	        <snapshots>
-	            <enabled>true</enabled>
-	            <updatePolicy>always</updatePolicy>
-	        </snapshots>
-	    </repository>
-	</repositories>
+
 
 	<build>
 		<sourceDirectory>${source.path}</sourceDirectory>
@@ -57,14 +45,13 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.8</version>
 				<configuration>
-					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+					<message>Maven artifacts for ${project.name} ${project.version}</message>  <!-- git commit message -->
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
 					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
 					<branch>refs/heads/master</branch>                       <!-- remote branch name -->
 					<includes><include>**/*</include></includes>
 					<repositoryName>maven_repo</repositoryName>      <!-- github repo name -->
 					<repositoryOwner>hanibalsk</repositoryOwner>    <!-- github username  -->
-					<merge>true</merge>
 				</configuration>
 				<executions>
 					<execution>
@@ -121,18 +108,6 @@
 			<artifactId>air-framework</artifactId>
 			<version>${flex.version}</version>
 			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>Starling</groupId>
-			<artifactId>Starling-Framework</artifactId>
-			<version>${starling.version}</version>
-			<type>swc</type>
-		</dependency>
-		<dependency>
-			<groupId>Feathers</groupId>
-			<artifactId>Feathers-Framework</artifactId>
-			<version>${feathers.version}</version>
-			<type>swc</type>
 		</dependency>
 	</dependencies>
 
