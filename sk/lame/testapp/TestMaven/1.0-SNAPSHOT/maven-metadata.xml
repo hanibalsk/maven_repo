@@ -5,25 +5,25 @@
   <version>1.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20130901.140829</timestamp>
-      <buildNumber>2</buildNumber>
+      <timestamp>20130901.141602</timestamp>
+      <buildNumber>3</buildNumber>
     </snapshot>
-    <lastUpdated>20130901140829</lastUpdated>
+    <lastUpdated>20130901141602</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>swf</extension>
-        <value>1.0-20130901.140829-2</value>
-        <updated>20130901140829</updated>
+        <value>1.0-20130901.141602-3</value>
+        <updated>20130901141602</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0-20130901.140829-2</value>
-        <updated>20130901140829</updated>
+        <value>1.0-20130901.141602-3</value>
+        <updated>20130901141602</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>air</extension>
-        <value>1.0-20130901.140829-2</value>
-        <updated>20130901140829</updated>
+        <value>1.0-20130901.141602-3</value>
+        <updated>20130901141602</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
