@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata modelVersion="1.1.0">
-  <groupId>Starling</groupId>
-  <artifactId>Starling-Framework</artifactId>
-  <version>1.4-RC2-SNAPSHOT</version>
+  <groupId>justpinegames.Logi</groupId>
+  <artifactId>Logi</artifactId>
+  <version>1.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20130901.141436</timestamp>
+      <timestamp>20130901.160129</timestamp>
       <buildNumber>2</buildNumber>
     </snapshot>
-    <lastUpdated>20130901141436</lastUpdated>
+    <lastUpdated>20130901160129</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>swc</extension>
-        <value>1.4-RC2-20130901.141436-2</value>
-        <updated>20130901141436</updated>
+        <value>1.0-20130901.160129-2</value>
+        <updated>20130901160129</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.4-RC2-20130901.141436-2</value>
-        <updated>20130901141436</updated>
+        <value>1.0-20130901.160129-2</value>
+        <updated>20130901160129</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
