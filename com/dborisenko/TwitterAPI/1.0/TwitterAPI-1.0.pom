@@ -1,0 +1,140 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.dborisenko</groupId>
+	<artifactId>TwitterAPI</artifactId>
+	<version>1.0</version>
+	<packaging>swc</packaging>
+	<name>TwitterAPI</name>
+
+	<properties>
+		<!-- 	the application name which must match the main mxml file
+				and application descriptor file names -->
+		<application.name>TwitterAPI</application.name>
+		<air.version>3.8</air.version>
+		<flex.version>4.10.0.20130801</flex.version>
+		<flexmojos.version>6.0.0</flexmojos.version>
+		<source.path>src</source.path>
+		<dependency.path>dependencies</dependency.path>
+		<keystore.file>${dependency.path}/certificate/cert.p12</keystore.file>
+		<keystore.password>123</keystore.password>
+		<!-- github server corresponds to entry in ~/.m2/settings.xml -->
+		<github.global.server>github</github.global.server>
+		<as3corelib.version>1.0</as3corelib.version>
+		<crypto.version>1.4</crypto.version>
+	</properties>
+	
+	<repositories>
+	    <repository>
+	        <id>maven_repo</id>
+	        <url>https://raw.github.com/hanibalsk/maven_repo/master/</url>
+	        <snapshots>
+	            <enabled>true</enabled>
+	            <updatePolicy>always</updatePolicy>
+	        </snapshots>
+	    </repository>
+	</repositories>
+
+	<build>
+		<sourceDirectory>${source.path}</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-jgitflow-plugin</artifactId>
+				<version>1.0-alpha20</version>
+				<configuration>
+					<!-- see goals wiki page for configuration options -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.8</version>
+				<configuration>
+					<message>Maven artifacts for ${project.name} ${project.version}</message>  <!-- git commit message -->
+					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+					<branch>refs/heads/master</branch>                       <!-- remote branch name -->
+					<includes><include>**/*</include></includes>
+					<repositoryName>maven_repo</repositoryName>      <!-- github repo name -->
+					<repositoryOwner>hanibalsk</repositoryOwner>    <!-- github username  -->
+					<merge>true</merge>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>net.flexmojos.oss</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>6.0.0</version>
+				<extensions>true</extensions>
+				<dependencies>
+					<dependency>
+						<groupId>org.sonatype.sisu.inject</groupId>
+						<artifactId>guice-bean-containers</artifactId>
+						<version>2.3.0</version>
+						<type>pom</type>
+					</dependency>
+					<dependency>
+						<groupId>com.adobe.flex</groupId>
+						<artifactId>compiler</artifactId>
+						<version>${flex.version}</version>
+						<type>pom</type>
+					</dependency>
+					<dependency>
+						<groupId>com.adobe.air</groupId>
+						<artifactId>compiler</artifactId>
+						<version>${air.version}</version>
+						<type>pom</type>
+					</dependency>
+					<dependency>
+						<groupId>com.adobe.air.compiler</groupId>
+						<artifactId>adt</artifactId>
+						<version>${air.version}</version>
+						<scope>compile</scope>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.adobe.air.framework</groupId>
+			<artifactId>common-framework</artifactId>
+			<version>${air.version}</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>com.adobe.flex.framework.air</groupId>
+			<artifactId>air-framework</artifactId>
+			<version>${flex.version}</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>com.adobe</groupId>
+			<artifactId>AS3-Core-Lib</artifactId>
+			<version>${as3corelib.version}</version>
+			<type>swc</type>
+		</dependency>
+		<dependency>
+			<groupId>com.hurlant</groupId>
+			<artifactId>AS3-Crypto</artifactId>
+			<version>${crypto.version}</version>
+			<type>swc</type>
+		</dependency>
+		
+	</dependencies>
+
+</project>
