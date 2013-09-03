@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.alivepdf</groupId>
+  <artifactId>AlivePDF</artifactId>
+  <versioning>
+    <release>0.1.5-RC</release>
+    <versions>
+      <version>0.1.5-RC</version>
+    </versions>
+    <lastUpdated>20130903112655</lastUpdated>
+  </versioning>
+</metadata>
