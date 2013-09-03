@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.robotlegs</groupId>
+  <artifactId>robotlegs-framework</artifactId>
+  <versioning>
+    <versions>
+      <version>2.1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20130903092618</lastUpdated>
+  </versioning>
+</metadata>
