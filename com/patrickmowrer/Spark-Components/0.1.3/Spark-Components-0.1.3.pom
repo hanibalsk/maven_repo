@@ -93,9 +93,7 @@
 					</dependency>
 				</dependencies>
 				<configuration>
-					<includeFiles>
-						<include>e:\Work\Git\spark-components\implementation\manifest.xml</include>
-					</includeFiles>
+					
 				</configuration>
 			</plugin>
 		</plugins>
