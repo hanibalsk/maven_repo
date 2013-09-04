@@ -21,6 +21,7 @@
 		<github.global.server>github</github.global.server>
 		
 		<starling.version>1.4-RC2-SNAPSHOT</starling.version>
+		<feathers.version>1.2-SNAPSHOT</feathers.version>
 		<tweetr.version>1.0-beta3</tweetr.version>
 		<tweetr.artifact>Tweetr-AIR</tweetr.artifact>
 		<fbgraph.version>1.8.1</fbgraph.version>
@@ -39,22 +40,16 @@
 		<alivepdf.version>0.1.5-RC</alivepdf.version>
 		<eazetween.version>1.0-RC2</eazetween.version>
 		<robotlegsstarlingviemap.version>1.0</robotlegsstarlingviemap.version>
-		
 	</properties>
-	
-	<repositories>
-	    <repository>
-	        <id>maven_repo</id>
-	        <url>https://raw.github.com/hanibalsk/maven_repo/master/</url>
-	        <snapshots>
-	            <enabled>true</enabled>
-	            <updatePolicy>always</updatePolicy>
-	        </snapshots>
-	    </repository>
-	</repositories>
+
 
 	<build>
 		<sourceDirectory>${source.path}</sourceDirectory>
+		<resources>
+	      <resource>
+	        <directory>resources</directory>
+	      </resource>
+	    </resources>
 		<plugins>
 			<plugin>
 				<groupId>com.atlassian.maven.plugins</groupId>
@@ -76,7 +71,7 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.8</version>
 				<configuration>
-					<message>Maven artifacts for ${project.name} ${project.version}</message>  <!-- git commit message -->
+					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
 					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
 					<branch>refs/heads/master</branch>                       <!-- remote branch name -->
@@ -113,6 +108,12 @@
 						<type>pom</type>
 					</dependency>
 					<dependency>
+						<groupId>com.adobe.flex.framework.air</groupId>
+						<artifactId>air-framework</artifactId>
+						<version>${flex.version}</version>
+						<type>pom</type>
+					</dependency>
+					<dependency>
 						<groupId>com.adobe.air</groupId>
 						<artifactId>compiler</artifactId>
 						<version>${air.version}</version>
@@ -129,9 +130,9 @@
 					<compilerWarnings>
 						<warn-no-constructor>false</warn-no-constructor>
 					</compilerWarnings>
-					<includeFiles>
-						<include>${project.basedir}/src/manifest.xml</include>
-					</includeFiles>
+<!-- 					<includeFiles> -->
+<!-- 						<include>manifest.xml</include> -->
+<!-- 					</includeFiles> -->
 				</configuration>
 			</plugin>
 		</plugins>
@@ -150,9 +151,21 @@
 			<type>pom</type>
 		</dependency>
 		<dependency>
+			<groupId>com.adobe.flex.framework.mobile</groupId>
+			<artifactId>mobilecomponents</artifactId>
+			<version>${flex.version}</version>
+			<type>swc</type>
+		</dependency>
+		<dependency>
 			<groupId>Starling</groupId>
 			<artifactId>Starling-Framework</artifactId>
 			<version>${starling.version}</version>
+			<type>swc</type>
+		</dependency>
+		<dependency>
+			<groupId>Feathers</groupId>
+			<artifactId>Feathers-Framework</artifactId>
+			<version>${feathers.version}</version>
 			<type>swc</type>
 		</dependency>
 		<dependency>
@@ -257,7 +270,6 @@
 			<version>${robotlegsstarlingviemap.version}</version>
 			<type>swc</type>
 		</dependency>
-		
 	</dependencies>
 
 </project>
