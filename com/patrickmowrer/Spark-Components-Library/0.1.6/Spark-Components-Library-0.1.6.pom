@@ -92,6 +92,21 @@
 						<scope>compile</scope>
 					</dependency>
 				</dependencies>
+				<executions>
+					<execution>
+						<goals>
+						  <goal>manifest</goal>
+						</goals>
+						<configuration>
+						  <manifestIncludes>
+							<include>**/*</include>
+						  </manifestIncludes>
+						  <manifestExcludes>
+							<exclude>**/*.mxml</exclude>
+						  </manifestExcludes>
+						</configuration>
+					</execution>
+				</executions>
 				<configuration>
 					<includeNamespaces>
 						<namespace>library://ns.patrickmowrer.com</namespace>
