@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.patrickmowrer</groupId>
+	<artifactId>Spark-Components</artifactId>
+	<version>0.1.6</version>
+	<packaging>swc</packaging>
+	<name>Spark-Components</name>
+
+	<properties>
+		<!-- 	the application name which must match the main mxml file
+				and application descriptor file names -->
+		<application.name>Spark-Components</application.name>
+		<air.version>3.8</air.version>
+		<flex.version>4.10.0.20130801</flex.version>
+		<flexmojos.version>6.0.1</flexmojos.version>
+		<source.path>src</source.path>
+		<dependency.path>dependencies</dependency.path>
+		<!-- github server corresponds to entry in ~/.m2/settings.xml -->
+		<github.global.server>github</github.global.server>
+	</properties>
+
+
+	<build>
+		<sourceDirectory>${source.path}</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-jgitflow-plugin</artifactId>
+				<version>1.0-alpha20</version>
+				<configuration>
+					<!-- see goals wiki page for configuration options -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.8</version>
+				<configuration>
+					<message>Maven artifacts for ${project.name} ${project.version}</message>  <!-- git commit message -->
+					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+					<branch>refs/heads/master</branch>                       <!-- remote branch name -->
+					<includes><include>**/*</include></includes>
+					<repositoryName>maven_repo</repositoryName>      <!-- github repo name -->
+					<repositoryOwner>hanibalsk</repositoryOwner>    <!-- github username  -->
+					<merge>true</merge>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>net.flexmojos.oss</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
+				<extensions>true</extensions>
+				<dependencies>
+					<dependency>
+						<groupId>org.sonatype.sisu.inject</groupId>
+						<artifactId>guice-bean-containers</artifactId>
+						<version>2.3.0</version>
+						<type>pom</type>
+					</dependency>
+					<dependency>
+						<groupId>com.adobe.flex</groupId>
+						<artifactId>compiler</artifactId>
+						<version>${flex.version}</version>
+						<type>pom</type>
+					</dependency>
+					<dependency>
+						<groupId>com.adobe.air</groupId>
+						<artifactId>compiler</artifactId>
+						<version>${air.version}</version>
+						<type>pom</type>
+					</dependency>
+					<dependency>
+						<groupId>com.adobe.air.compiler</groupId>
+						<artifactId>adt</artifactId>
+						<version>${air.version}</version>
+						<scope>compile</scope>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<includeNamespaces>
+						<namespace>library://ns.patrickmowrer.com</namespace>
+					</includeNamespaces>
+					<namespaces>
+						<namespace>
+							<uri>library://ns.patrickmowrer.com</uri>
+							<manifest>${build.sourceDirectory}/manifest.xml</manifest>
+						</namespace>
+					</namespaces>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.adobe.air.framework</groupId>
+			<artifactId>common-framework</artifactId>
+			<version>${air.version}</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>com.adobe.flex.framework.air</groupId>
+			<artifactId>air-framework</artifactId>
+			<version>${flex.version}</version>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+
+</project>
