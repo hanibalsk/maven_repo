@@ -9,7 +9,7 @@
 	<properties>
 		<!-- 	the application name which must match the main mxml file
 				and application descriptor file names -->
-		<application.name>Spark-Components</application.name>
+		<application.name>Spark-Components-Library</application.name>
 		<air.version>3.8</air.version>
 		<flex.version>4.10.0.20130801</flex.version>
 		<flexmojos.version>6.0.1</flexmojos.version>
