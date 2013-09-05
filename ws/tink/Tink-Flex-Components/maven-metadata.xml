@@ -3,10 +3,11 @@
   <groupId>ws.tink</groupId>
   <artifactId>Tink-Flex-Components</artifactId>
   <versioning>
-    <release>4.6-Spark</release>
+    <release>4.10.0-Spark</release>
     <versions>
       <version>4.6-Spark</version>
+      <version>4.10.0-Spark</version>
     </versions>
-    <lastUpdated>20130902132843</lastUpdated>
+    <lastUpdated>20130905123639</lastUpdated>
   </versioning>
 </metadata>
