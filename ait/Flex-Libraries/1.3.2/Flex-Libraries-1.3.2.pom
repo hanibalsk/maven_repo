@@ -29,7 +29,7 @@
 		<twborisenko.version>1.0</twborisenko.version>
 		<as3corelib.version>1.0</as3corelib.version>
 		<tink.version>4.6-Spark</tink.version>
-		<patrickmowrer.version>0.1.5</patrickmowrer.version>
+		<patrickmowrer.version>0.1.6</patrickmowrer.version>
 		<marcel.version>1.0-SNAPSHOT</marcel.version>
 		<greensock.version>12.0.14</greensock.version>
 		<fxgparser.version>1.0</fxgparser.version>
@@ -41,6 +41,17 @@
 		<eazetween.version>1.0-RC2</eazetween.version>
 		<robotlegsstarlingviemap.version>1.0</robotlegsstarlingviemap.version>
 	</properties>
+
+	<repositories>
+	    <repository>
+	        <id>maven_repo</id>
+	        <url>https://raw.github.com/hanibalsk/maven_repo/master/</url>
+	        <snapshots>
+	            <enabled>true</enabled>
+	            <updatePolicy>always</updatePolicy>
+	        </snapshots>
+	    </repository>
+	</repositories>
 
 
 	<build>
