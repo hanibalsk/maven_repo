@@ -5,20 +5,20 @@
   <version>1.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20130901.160129</timestamp>
-      <buildNumber>2</buildNumber>
+      <timestamp>20131004.140221</timestamp>
+      <buildNumber>3</buildNumber>
     </snapshot>
-    <lastUpdated>20130901160129</lastUpdated>
+    <lastUpdated>20131004140221</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>swc</extension>
-        <value>1.0-20130901.160129-2</value>
-        <updated>20130901160129</updated>
+        <value>1.0-20131004.140221-3</value>
+        <updated>20131004140221</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0-20130901.160129-2</value>
-        <updated>20130901160129</updated>
+        <value>1.0-20131004.140221-3</value>
+        <updated>20131004140221</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
