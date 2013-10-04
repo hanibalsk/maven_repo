@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>Starling</groupId>
+  <artifactId>Starling-Framework</artifactId>
+  <version>1.4-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20131004.133227</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20131004133227</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>swc</extension>
+        <value>1.4-20131004.133227-1</value>
+        <updated>20131004133227</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.4-20131004.133227-1</value>
+        <updated>20131004133227</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
